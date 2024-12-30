@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import "../styles/projects.css";
+
+const projects = [
+  {
+    title: "MealMind",
+    description: "Recipe prediction application based on Ingridents",
+    date: "Dec 01, 2024",
+    technologies: ["sklearn", "Django", "MongoDB", "DRF", "PostMan"],
+    githubLink: "https://github.com/aadityarkrishnan/Meal-Mind"
+  },
+  {
+    title: "MetricDashboard",
+    description: "Real Time metric collection from AWS EC2 Instance",
+    date: "Nov 01, 2024",
+    technologies: ["React JS", "Tailwind", "RabbitMQ", "Docker", "Redis", "PostgreSQL", "Django"],
+    githubLink: "https://github.com/aadityarkrishnan/MetericDashBoard"
+  },
+  {
+    title: "Gateu",
+    description: "E-commerce application for selling bakery goodies",
+    date: "April 26, 2023",
+    technologies: ["React JS", "Django", "Postgres", "Redux", "Axios"],
+    githubLink: "https://github.com/aadityarkrishnan/Gateu"
+  }
+];
+---
+
+<Layout title="Projects">
+  <div class="max-w-[1920px] mx-auto p-8">
+    <div class="border-1 border-gray-200 rounded-[1rem] p-8 bg-white shadow-sm">
+      <div class="text-center mb-16 border-b border-gray-100 pb-8">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+          Personal Projects
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Explored and mastered various technologies through hands-on development of these projects.
+        </p>
+      </div>
+
+      <div class="flex flex-nowrap gap-8 overflow-x-auto pb-4 scrollbar-hide">
+        {
+          projects.map((project) => (
+            <a 
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-[240px] flex-none cursor-pointer"
+            >
+              <article class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-2 hover:scale-[1.02]">
+                <div class="aspect-[2/3] w-full overflow-hidden rounded-t-2xl">
+                  <img
+                    src="/src/assets/proj_thumbnail.jpeg"
+                    alt={project.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="p-3">
+                  <div class="text-xs text-gray-500 mb-1.5">
+                    <time>{project.date}</time>
+                  </div>
+
+                  <h3 class="text-sm font-semibold text-gray-900 mb-1.5 line-clamp-1 group-hover:text-blue-600 transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p class="text-xs text-gray-600 mb-3 line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  <div class="text-xs text-gray-500 mb-3">
+                    <strong>Technologies:</strong> {project.technologies.join(", ")}
+                  </div>
+
+                  <div class="flex items-center justify-end">
+                    <Icon name="bx:link-external" class="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-300" />
+                  </div>
+                </div>
+              </article>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

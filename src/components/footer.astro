@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="my-20">
+  <div class="text-center">
+    <div class="flex items-center justify-center gap-4 mb-4">
+      <a 
+        href="mailto:aadityarkrishnan@gmail.com" 
+        class="text-gray-600 hover:text-black transition-colors duration-200"
+        aria-label="Email">
+        <Icon class="w-6 h-6" name="bx:bxs-envelope" />
+      </a>
+      <a 
+        href="https://www.linkedin.com/in/aaditya-r-krishnan-3200a92aa/" 
+        target="_blank"
+        rel="noopener"
+        class="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+        aria-label="LinkedIn">
+        <Icon class="w-6 h-6" name="bx:bxl-linkedin" />
+      </a>
+      <a 
+        href="https://github.com/aadityarkrishnan" 
+        target="_blank"
+        rel="noopener"
+        class="text-gray-600 hover:text-black transition-colors duration-200"
+        aria-label="GitHub">
+        <Icon class="w-6 h-6" name="bx:bxl-github" />
+      </a>
+    </div>
+    <p class="text-sm text-slate-600 font-medium">
+      Made with <span class="text-red-500">❤</span> by Aaditya R Krishnan
+    </p>
+    <p class="text-xs text-slate-500 mt-2">
+      © {new Date().getFullYear()} | Full Stack Python Engineer
+    </p>
+  </div>
+</footer>

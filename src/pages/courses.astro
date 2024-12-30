@@ -1,0 +1,89 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const courses = [
+  {
+    title: "Ultimate AWS Certified Developer Associate",
+    platform: "Udemy",
+    instructor: "Stephane Maarek",
+    description: "Comprehensive course covering AWS services and concepts for the AWS Certified Developer Associate certification. Learn about AWS fundamentals, IAM, EC2, S3, RDS, and more.",
+    skills: ["AWS", "Cloud Computing", "DevOps"],
+    link: "https://www.udemy.com/course/aws-certified-developer-associate-dva-c01",
+  },
+  {
+    title: "The Complete Hands-On Course to Master Apache Airflow",
+    platform: "Udemy",
+    instructor: "Marc Lamberti",
+    description: "Master Apache Airflow with hands-on practice. Learn to create data pipelines, schedule tasks, and manage workflows effectively.",
+    skills: ["Apache Airflow", "Data Pipeline", "Python"],
+    link: "https://www.udemy.com/course/the-complete-hands-on-course-to-master-apache-airflow",
+  },
+  {
+    title: "Namaste React",
+    platform: "Namaste Dev",
+    instructor: "Akshay Saini",
+    description: "In-depth React.js course covering core concepts, advanced patterns, and real-world applications. Learn React from scratch to advanced level.",
+    skills: ["React.js", "JavaScript", "Web Development"],
+    link: "https://namastedev.com/learn/namaste-react",
+  },
+  {
+    title: "Django with React - An Ecommerce Website",
+    platform: "Udemy",
+    instructor: "Dennis Ivy",
+    description: "Build a full-stack ecommerce application using Django and React. Learn to integrate frontend with backend, handle authentication, and manage state.",
+    skills: ["Django", "React.js", "Full Stack"],
+    link: "https://www.udemy.com/course/django-with-react-an-ecommerce-website",
+  }
+];
+---
+
+<Layout title="Courses">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Online Courses</Fragment>
+      <Fragment slot="desc">Continuous learning and skill development</Fragment>
+    </Sectionhead>
+
+    <div class="mt-16 space-y-6">
+      {
+        courses.map((course) => (
+          <a 
+            href={course.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6"
+          >
+            <div class="flex flex-col">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600">
+                  {course.title}
+                </h3>
+                <span class="px-3 py-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
+                  {course.platform}
+                </span>
+              </div>
+              
+              <p class="mt-2 text-sm text-gray-600">
+                Instructor: {course.instructor}
+              </p>
+              
+              <p class="mt-3 text-gray-500">
+                {course.description}
+              </p>
+              
+              <div class="mt-4 flex flex-wrap gap-2">
+                {course.skills.map((skill) => (
+                  <span class="px-2 py-1 text-sm font-medium bg-gray-100 text-gray-700 rounded">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

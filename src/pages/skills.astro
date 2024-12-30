@@ -1,0 +1,114 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const skillCategories = [
+  {
+    title: "Frontend",
+    color: "bg-blue-50",
+    skills: [
+      { name: "React.js", icon: "react", color: "61DAFB" },
+      { name: "Redux", icon: "redux", color: "764ABC" },
+      { name: "Axios", icon: "axios", color: "5A29E4" },
+      { name: "HighCharts", icon: "chartdotjs", color: "058DC7" },
+      { name: "Tailwind CSS", icon: "tailwindcss", color: "06B6D4" },
+      { name: "JavaScript", icon: "javascript", color: "F7DF1E" },
+      { name: "HTML5", icon: "html5", color: "E34F26" },
+      { name: "CSS3", icon: "css3", color: "1572B6" },
+      { name: "jQuery", icon: "jquery", color: "0769AD" },
+      { name: "Bootstrap", icon: "bootstrap", color: "7952B3" }
+    ]
+  },
+  {
+    title: "Backend/Services",
+    color: "bg-green-50",
+    skills: [
+      { name: "Python", icon: "python", color: "3776AB" },
+      { name: "Django", icon: "django", color: "092E20" },
+      { name: "DRF", icon: "django", color: "092E20" },
+      { name: "Django Channels", icon: "django", color: "092E20" },
+      { name: "Go", icon: "go", color: "00ADD8" },
+      { name: "OKTA2", icon: "okta", color: "007DC1" },
+      { name: "Gunicorn", icon: "gunicorn", color: "499848" },
+      { name: "NumPy", icon: "numpy", color: "013243" },
+      { name: "Pandas", icon: "pandas", color: "150458" },
+      { name: "Scikit-learn", icon: "scikitlearn", color: "F7931E" }
+    ]
+  },
+  {
+    title: "AWS Services",
+    color: "bg-orange-50",
+    skills: [
+      { name: "AWS Lambda", icon: "awslambda", color: "FF9900" },
+      { name: "Amazon EC2", icon: "amazonec2", color: "FF9900" },
+      { name: "Amazon S3", icon: "amazons3", color: "569A31" },
+      { name: "Amazon SES", icon: "amazonsimpleemailservice", color: "DD344C" },
+      { name: "API Gateway", icon: "amazonapigateway", color: "FF9900" },
+      { name: "CloudWatch", icon: "amazoncloudwatch", color: "FF9900" },
+      { name: "DynamoDB", icon: "amazondynamodb", color: "4053D6" },
+    ]
+  },
+  {
+    title: "Databases",
+    color: "bg-yellow-50",
+    skills: [
+      { name: "PostgreSQL", icon: "postgresql", color: "4169E1" },
+      { name: "MongoDB", icon: "mongodb", color: "47A248" },
+      { name: "Redis", icon: "redis", color: "DC382D" },
+      { name: "MySQL", icon: "mysql", color: "4479A1" },
+      { name: "SQLite", icon: "sqlite", color: "003B57" }
+    ]
+  },
+  {
+    title: "DevOps & Tools",
+    color: "bg-purple-50",
+    skills: [
+      { name: "Docker", icon: "docker", color: "2496ED" },
+      { name: "Kubernetes", icon: "kubernetes", color: "326CE5" },
+      { name: "Git", icon: "git", color: "F05032" },
+      { name: "Jenkins", icon: "jenkins", color: "D24939" },
+      { name: "Nginx", icon: "nginx", color: "009639" }
+    ]
+  },
+  {
+    title: "Message Queuing",
+    color: "bg-red-50",
+    skills: [
+      { name: "RabbitMQ", icon: "rabbitmq", color: "FF6600" },
+      { name: "Amazon SQS", icon: "amazonsqs", color: "FF4F8B" }
+    ]
+  }
+];
+---
+
+<Layout title="Skills">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Technical Skills</Fragment>
+      <Fragment slot="desc">
+        A comprehensive overview of my technical expertise and tools
+      </Fragment>
+    </Sectionhead>
+
+    <div class="mt-16 space-y-8">
+      {skillCategories.map((category) => (
+        <div class={`p-6 rounded-lg ${category.color}`}>
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">{category.title}</h2>
+          <div class="grid gap-4 md:grid-cols-4 lg:grid-cols-5">
+            {category.skills.map((skill) => (
+              <div class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center">
+                <img
+                  src={`https://cdn.simpleicons.org/${skill.icon}/${skill.color}`}
+                  alt={skill.name}
+                  class="w-5 h-5 mr-2"
+                />
+                <span class="font-medium text-gray-800 text-sm">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Layout>

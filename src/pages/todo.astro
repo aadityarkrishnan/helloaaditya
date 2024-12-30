@@ -1,0 +1,303 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const lists = [
+  {
+    title: "To Do",
+    color: "bg-gray-100",
+    tasks: [
+      {
+        id: 1,
+        title: "Learn Go Basics",
+        tag: "Programming",
+        tagColor: "bg-blue-100 text-blue-700",
+        tentativeMonth: "2025-01",
+        priority: "High"
+      },
+      {
+        id: 2,
+        title: "Understand Docker Basics",
+        tag: "DevOps",
+        tagColor: "bg-purple-100 text-purple-700",
+        tentativeMonth: "2025-01",
+        priority: "High"
+      },
+      {
+        id: 3,
+        title: "Build a REST API and Containerize with Docker",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-02",
+        priority: "High"
+      },
+      {
+        id: 4,
+        title: "Learn Intermediate Go (Structs, Interfaces, Error Handling)",
+        tag: "Programming",
+        tagColor: "bg-blue-100 text-blue-700",
+        tentativeMonth: "2025-02",
+        priority: "High"
+      },
+      {
+        id: 5,
+        title: "Write Dockerfiles and Learn Docker Compose",
+        tag: "DevOps",
+        tagColor: "bg-purple-100 text-purple-700",
+        tentativeMonth: "2025-02",
+        priority: "Medium"
+      },
+      {
+        id: 6,
+        title: "Build a Concurrent Web Scraper and Deploy Using Docker Compose",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-03",
+        priority: "High"
+      },
+      {
+        id: 7,
+        title: "Master Concurrency in Go",
+        tag: "Programming",
+        tagColor: "bg-blue-100 text-blue-700",
+        tentativeMonth: "2025-03",
+        priority: "High"
+      },
+      {
+        id: 8,
+        title: "Learn Docker Networking",
+        tag: "DevOps",
+        tagColor: "bg-purple-100 text-purple-700",
+        tentativeMonth: "2025-03",
+        priority: "Medium"
+      },
+      {
+        id: 9,
+        title: "Build a Microservices Architecture Using Go and Docker",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-04",
+        priority: "High"
+      },
+      {
+        id: 10,
+        title: "Understand Kubernetes Basics",
+        tag: "DevOps",
+        tagColor: "bg-indigo-100 text-indigo-700",
+        tentativeMonth: "2025-04",
+        priority: "High"
+      },
+      {
+        id: 11,
+        title: "Deploy Go App on Kubernetes",
+        tag: "DevOps",
+        tagColor: "bg-indigo-100 text-indigo-700",
+        tentativeMonth: "2025-05",
+        priority: "High"
+      },
+      {
+        id: 12,
+        title: "Build a Scalable Chat Application with Kubernetes and Go",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-05",
+        priority: "High"
+      },
+      {
+        id: 13,
+        title: "Learn Kubernetes Networking (Services, Ingress, ConfigMaps)",
+        tag: "DevOps",
+        tagColor: "bg-indigo-100 text-indigo-700",
+        tentativeMonth: "2025-06",
+        priority: "High"
+      },
+      {
+        id: 14,
+        title: "Learn AWS Basics (S3, API Gateway, DynamoDB)",
+        tag: "Cloud",
+        tagColor: "bg-yellow-100 text-yellow-700",
+        tentativeMonth: "2025-07",
+        priority: "High"
+      },
+      {
+        id: 15,
+        title: "Build a Serverless Event Tracking System Using AWS",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-07",
+        priority: "High"
+      },
+      {
+        id: 16,
+        title: "Write AWS Lambda Functions in Go",
+        tag: "Cloud",
+        tagColor: "bg-yellow-100 text-yellow-700",
+        tentativeMonth: "2025-08",
+        priority: "High"
+      },
+      {
+        id: 17,
+        title: "Integrate AWS CloudWatch, SES, and SNS",
+        tag: "Cloud",
+        tagColor: "bg-yellow-100 text-yellow-700",
+        tentativeMonth: "2025-09",
+        priority: "Medium"
+      },
+      {
+        id: 18,
+        title: "Build a Notification Service Using AWS SNS and SES",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-09",
+        priority: "Medium"
+      },
+      {
+        id: 19,
+        title: "Study System Design Basics",
+        tag: "Architecture",
+        tagColor: "bg-red-100 text-red-700",
+        tentativeMonth: "2025-10",
+        priority: "High"
+      },
+      {
+        id: 20,
+        title: "Build a URL Shortener System with Scalable Design",
+        tag: "Project",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-10",
+        priority: "High"
+      },
+      {
+        id: 21,
+        title: "Learn Advanced React.js",
+        tag: "Frontend",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-11",
+        priority: "High"
+      },
+      {
+        id: 22,
+        title: "Prepare for Python and System Design Interviews",
+        tag: "Interview Prep",
+        tagColor: "bg-blue-100 text-blue-700",
+        tentativeMonth: "2025-12",
+        priority: "High"
+      }
+    ]
+  },
+  {
+    title: "In Progress",
+    color: "bg-blue-50",
+    tasks: [
+      {
+        id: 23,
+        title: "Learn Go Language and Docker Basics",
+        tag: "Programming & DevOps",
+        tagColor: "bg-green-100 text-green-700",
+        tentativeMonth: "2025-01",
+        priority: "High"
+      }
+    ]
+  },
+  {
+    title: "Done",
+    color: "bg-green-50",
+    tasks: [
+      {
+        id: 24,
+        title: "Completed New Portfolio",
+        tag: "Personal Project",
+        tagColor: "bg-gray-100 text-gray-700",
+        tentativeMonth: "2024-12",
+        completedMonth: "2024-12",
+        priority: "Medium"
+      }
+    ]
+  }
+];
+
+
+
+
+const getPriorityColor = (priority: string) => {
+  switch (priority.toLowerCase()) {
+    case 'critical':
+      return 'bg-red-100 text-red-700';
+    case 'high':
+      return 'bg-orange-100 text-orange-700';
+    case 'medium':
+      return 'bg-yellow-100 text-yellow-700';
+    case 'low':
+      return 'bg-green-100 text-green-700';
+    default:
+      return 'bg-gray-100 text-gray-700';
+  }
+};
+---
+
+<Layout title="Task Board">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Task Board</Fragment>
+      <Fragment slot="desc">Track and manage project tasks</Fragment>
+    </Sectionhead>
+
+    <div class="min-h-screen p-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex gap-6 overflow-x-auto pb-4 mt-8">
+          {
+            lists.map((list) => (
+              <div class="flex-shrink-0 w-80">
+                <div class={`rounded-lg shadow-sm ${list.color}`}>
+                  <div class="p-4 border-b border-gray-200">
+                    <h2 class="font-semibold text-gray-900">{list.title}</h2>
+                    <div class="text-sm text-gray-500 mt-1">
+                      {list.tasks.length} issues
+                    </div>
+                  </div>
+                  
+                  <div class="p-4 space-y-4">
+                    {list.tasks.map((task) => (
+                      <div class="bg-white rounded-lg shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow">
+                        <div class="flex items-start justify-between">
+                          <span class={`inline-block px-2 py-1 text-xs font-medium rounded ${task.tagColor}`}>
+                            {task.tag}
+                          </span>
+                          <span class={`inline-block px-2 py-1 text-xs font-medium rounded ${getPriorityColor(task.priority)}`}>
+                            {task.priority}
+                          </span>
+                        </div>
+                        
+                        <h3 class="text-sm font-medium text-gray-900 mt-2">
+                          {task.title}
+                        </h3>
+                        
+                        <div class="mt-4 flex items-center text-xs text-gray-500 space-x-4">
+                          <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Target: {task.tentativeMonth}</span>
+                          </div>
+                          {task.completedMonth && (
+                            <div class="flex items-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                              </svg>
+                              <span>Done: {task.completedMonth}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

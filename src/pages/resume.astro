@@ -1,0 +1,211 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const experience = [
+  {
+    title: "Associate Lead Engineer",
+    company: "Envestnet",
+    period: "December 2022 - Present",
+    location: "Trivandrum",
+    type: "Full-time · Hybrid",
+    duties: [
+      "Developed Lighthouse, a cybersecurity application using Django, React, PostgreSQL, MongoDB, and Redis to automate security assessments and streamline cloud posture management.",
+      "Automated the collection of AWS resource configurations violating secure rules from CrowdStrike through daily cron jobs.",
+      "Prioritized security detections by severity (High, Critical) to ensure efficient security reviews.",
+      "Implemented multi-organization support for AWS accounts across Envestnet and DNA to centralize security posture management.",
+      "Created a suppression feature to manage detections at policy, account, and resource levels.",
+      "Built a Drift Detection feature to identify and report deltas in cloud posture configurations between specific dates.",
+      "Enabled email-based report delivery to stakeholders of AWS accounts for timely action.",
+      "Streamlined firewall assessments and rule analysis, reducing manual efforts by 80%.",
+      "Created interactive dashboards using Highcharts for real-time data visualization and actionable insights.",
+      "Automated PDF and Excel report generation for consistent, accurate compliance data.",
+      "Integrated AWS SES for timely notifications and report delivery.",
+      "Conducted Falcon agent checks for AWS EC2 instances to ensure endpoint security.",
+      "Performed twice-daily health checks, achieving 99.9% system reliability and uptime.",
+      "Implemented Security as Code to identify and mitigate vulnerabilities, improving incident response time by 50%.",
+      "Aggregated data from AWS services (IAM, Transit Gateway, Load Balancer, VPC, Route53, GuardDuty) using Boto3 for enhanced security monitoring.",
+      "Automated assessments for Palo Alto firewalls to optimize network security.",
+      "Delivered security insights through dashboards, tabular views, and reports to over 100 team members.",
+      "Implemented OKTA SAML2 for secure authentication and access management.",
+      "Conducted IP rule analysis to ensure network compliance with security standards.",
+      "Implemented daily backups of databases to AWS S3 for data redundancy and disaster recovery.",
+      "Set up automated alerting to the Microsoft Team for any failures or critical issues to ensure timely intervention."
+    ],
+    skills: [
+      "React.js",
+      "Redux",
+      "Django",
+      "AWS EC2",
+      "Python",
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+      "OKTA SAML2",
+      "S3",
+      "SNS",
+      "SES",
+      "Git",
+      "Axios",
+      "Bootstrap",
+      "REST API"
+    ]
+  },
+  {
+  "title": "Technical Analyst",
+  "company": "Infosys Limited",
+  "period": "March 2020 - Dec 2022",
+  "location": "Trivandrum",
+  "type": "Full-time . Hybird",
+  "duties": [
+    "Enhanced security and authentication in Microsoft Exchange by modifying Token-Based Authentication, ensuring a more reliable email system for the organization.",
+    "Developed and optimized an admin module for an enterprise application in the Australian broadband service sector, improving operational efficiency and customer satisfaction.",
+    "Automated data integrity checks using Python and Pandas to identify and resolve unsynced data issues in the database, improving data accuracy.",
+    "Leveraged Apache Airflow to streamline data transfer between systems, reducing manual intervention and enhancing data reliability.",
+    "Proactively identified and resolved system issues, implementing bug fixes and feature enhancements for improved system functionality.",
+    "Implemented Python automation scripts for system health checks, Docker status monitoring, and ensuring continuous availability of critical services.",
+    "Migrated legacy jobs from Windows Scheduler to Apache Airflow, increasing processing speed by 85%.",
+    "Automated Docker health monitoring for 100+ servers using Python scripts, reducing support tasks by 60%.",
+    "Streamlined the React/Flask admin module, reducing manual database operations by 40%, and deployed network synchronization automation, achieving a 35% error reduction.",
+    "Engineered a data validation system with Python and Pandas to compare customer data and automated GUI health checks via web scraping, improving system reliability to 98%.",
+    "Received the Best Rookie Award (2021) from Trinfy AFE for introducing new features, deferring backlogged tasks, and streamlining processes.",
+    "Demonstrated expertise in Visual Basic .NET, C#, PHP, Oracle Database, Pandas, Python, Docker, Apache Airflow, GIT, and React.js, contributing to various projects and addressing enterprise application challenges."
+  ],
+  "skills": [
+    "Visual Basic .NET",
+    "C#",
+    "PHP",
+    "Oracle Database",
+    "Pandas",
+    "Python",
+    "Docker",
+    "Apache Airflow",
+    "GIT",
+    "React.js"
+  ]
+},
+{
+  "title": "Software Engineer",
+  "company": "INAPP Information Technologies (India) Private Limited",
+  "period": "Jan 2019 - Feb 2020",
+  "location": "Thiruvananthapuram, Kerala, India",
+  "type": "Full-time · On-site",
+  "duties": [
+    "Developed a web application using the **CodeIgniter** framework for managing hotel and resort bookings, implementing features like reservations, availability management, pricing, and integration with payment gateways, resulting in a seamless user experience and streamlined operations for hotel staff.",
+    "Created an innovative **interior design management application**, allowing users to visualize and plan their interior design projects with features like room layout configuration, furniture placement, color schemes, and material selection.",
+    "Transitioned to the financial domain, contributing to the development of a robust financial application for handling transactions, generating reports, and implementing security measures, ensuring a secure and efficient platform for financial management.",
+    "Developed a dynamic application for the **air conditioning domain** using **PHP**, **Angular**, and **MySQL**, integrating systems for monitoring and controlling air conditioning units, handling temperature data, and providing analytics tailored to the industry.",
+    "Gained extensive experience in web development, database management, and integrating technologies to deliver user-friendly applications that meet the unique requirements of each domain.",
+    "Collaborated effectively with multidisciplinary teams to design intuitive interfaces, implement complex functionalities, and deliver high-quality software solutions."
+  ],
+  "skills": [
+    "PHP",
+    "Angular",
+    "MySQL",
+    "CodeIgniter",
+    "Web Development",
+    "Database Management",
+    "Payment Gateway Integration",
+    "UI/UX Design"
+  ]
+},
+{
+  "title": "Junior Software Engineer",
+  "company": "RSGP Consulting Private Limited",
+  "period": "Jul 2017 - Jan 2019",
+  "location": "Thiruvananthapuram, Kerala, India",
+  "type": "Full-time · On-site",
+  "duties": [
+    "Successfully developed an in-house web application using **CodeIgniter** to streamline and optimize employee management processes for leave, working hours, and task tracking within the organization.",
+    "Led the end-to-end development process, from requirements gathering to deployment, ensuring seamless functionality and user experience.",
+    "Designed and implemented a robust database schema to efficiently store employee information, leave records, working hours, and task management data.",
+    "Developed a secure authentication system with role-based access controls, allowing authorized users to securely access and manage the application.",
+    "Implemented a comprehensive leave management system, enabling employees to request leaves, managers to approve or reject requests, and automatically calculating leave entitlements based on company policies.",
+    "Created a working hour tracking feature, allowing employees to log their working hours, breaks, and overtime, resulting in accurate payroll calculations and improved productivity analysis.",
+    "Developed a task management module, empowering employees to create, assign, and track tasks, ensuring effective collaboration and timely completion of projects.",
+    "Designed an intuitive and visually appealing user interface using responsive design principles to ensure seamless usability across various devices and screen sizes.",
+    "Conducted rigorous testing and debugging to identify and resolve issues, ensuring a stable and reliable application.",
+    "Prepared comprehensive documentation, including codebase explanations, configuration details, and user manuals to facilitate seamless onboarding and efficient usage of the application.",
+    "Enhanced internal processes, improved employee productivity, and contributed to the overall efficiency of the organization through the development of the application."
+  ],
+  "skills": [
+    "PHP",
+    "CodeIgniter",
+    "Web Development",
+    "Database Design",
+    "Role-based Access Control",
+    "Leave Management System",
+    "Task Management",
+    "Responsive Design",
+    "UI/UX Design"
+  ]
+}
+];
+---
+
+<Layout title="Resume">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    {
+      experience.map((job, index) => (
+        <div key={index} class="mb-8 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          {/* Header Section */}
+          <div class="border-b border-gray-200">
+            <div class="px-6 py-5">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">{job.title}</h3>
+                  <p class="text-base text-gray-600 mt-1">{job.company}</p>
+                  <div class="flex flex-wrap gap-2 mt-2 text-sm text-gray-500">
+                    <span class="flex items-center gap-1">
+                      <Icon name="bx:calendar" class="w-4 h-4" />
+                      {job.period}
+                    </span>
+                    <span class="flex items-center gap-1">
+                      <Icon name="bx:map" class="w-4 h-4" />
+                      {job.location}
+                    </span>
+                    <span class="flex items-center gap-1">
+                      <Icon name="bx:briefcase" class="w-4 h-4" />
+                      {job.type}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Section */}
+          <div class="px-6 py-5">
+            {/* Skills Tags */}
+            <div class="mb-4">
+              <div class="flex flex-wrap gap-2">
+                {job.skills.map((skill, skillIndex) => (
+                  <span key={skillIndex} class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Job Duties */}
+            <div>
+              <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">
+                Responsibilities & Achievements
+              </h4>
+              <ul class="space-y-3">
+                {job.duties.map((duty, dutyIndex) => (
+                  <li key={dutyIndex} class="flex gap-3">
+                    <span class="flex-shrink-0 w-5 h-5 text-gray-400">
+                      <Icon name="bx:right-arrow-alt" class="w-5 h-5" />
+                    </span>
+                    <span class="text-gray-600">{duty}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
