@@ -18,13 +18,5 @@ export default defineConfig({
     mdx(),
     sitemap(),
     icon()
-  ],
-  vite: {
-    base: '/helloaaditya/',  // Add this line with trailing slash
-    build: {
-      assetsInlineLimit: 0,  // Add this to prevent inlining of assets
-      cssCodeSplit: false,   // Add this to bundle all CSS into one file
-      assetsPrefix: '/helloaaditya'
-    }
-  }
+  ]
 });
