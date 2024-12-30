@@ -4,20 +4,67 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import { Image } from "astro:assets";
 
-// Import all images from the photos directory
-const imageFiles = import.meta.glob('/src/assets/photos/*.{png,jpg,jpeg,gif}');
+// Direct imports for all images
+import img1 from "@assets/photos/1.jpg";
+import img2 from "@assets/photos/2.jpg";
+import img3 from "@assets/photos/3.jpg";
+import img4 from "@assets/photos/4.jpg";
+import img5 from "@assets/photos/5.jpg";
+import img6 from "@assets/photos/6.jpg";
+import img7 from "@assets/photos/7.jpg";
+import img8 from "@assets/photos/8.jpg";
+import img9 from "@assets/photos/9.jpg";
+import img10 from "@assets/photos/10.jpg";
+import img11 from "@assets/photos/11.jpg";
+import img12 from "@assets/photos/12.jpg";
+import img13 from "@assets/photos/13.jpg";
+import img14 from "@assets/photos/14.jpg";
+import img15 from "@assets/photos/15.jpg";
+import img16 from "@assets/photos/16.jpg";
+import img17 from "@assets/photos/17.jpg";
+import img18 from "@assets/photos/18.jpg";
+import img19 from "@assets/photos/19.jpg";
+import img20 from "@assets/photos/20.jpg";
+import img21 from "@assets/photos/21.jpg";
+import img22 from "@assets/photos/22.jpg";
+import img23 from "@assets/photos/23.jpg";
+import img24 from "@assets/photos/24.jpg";
+import img25 from "@assets/photos/25.jpg";
+import img26 from "@assets/photos/26.jpg";
+import img27 from "@assets/photos/27.jpg";
+import img28 from "@assets/photos/28.jpg";
 
-// Map image paths to include metadata
-const images = Object.entries(imageFiles).map(([path]) => {
-  const filename = path.split('/').pop()?.split('.')[0] || '';
-  const resolvedPath = `/helloaaditya${path}`; // Simplified path construction
-
-  return {
-    src: resolvedPath,
-    alt: filename.replace(/-/g, ' '), // Generate alt text from filename
-    title: filename.replace(/-/g, ' ') // Generate title from filename
-  };
-});
+// Create array of image objects
+const images = [
+  { src: img1, alt: "Photo 1", title: "Photo 1" },
+  { src: img2, alt: "Photo 2", title: "Photo 2" },
+  { src: img3, alt: "Photo 3", title: "Photo 3" },
+  { src: img4, alt: "Photo 4", title: "Photo 4" },
+  { src: img5, alt: "Photo 5", title: "Photo 5" },
+  { src: img6, alt: "Photo 6", title: "Photo 6" },
+  { src: img7, alt: "Photo 7", title: "Photo 7" },
+  { src: img8, alt: "Photo 8", title: "Photo 8" },
+  { src: img9, alt: "Photo 9", title: "Photo 9" },
+  { src: img10, alt: "Photo 10", title: "Photo 10" },
+  { src: img11, alt: "Photo 11", title: "Photo 11" },
+  { src: img12, alt: "Photo 12", title: "Photo 12" },
+  { src: img13, alt: "Photo 13", title: "Photo 13" },
+  { src: img14, alt: "Photo 14", title: "Photo 14" },
+  { src: img15, alt: "Photo 15", title: "Photo 15" },
+  { src: img16, alt: "Photo 16", title: "Photo 16" },
+  { src: img17, alt: "Photo 17", title: "Photo 17" },
+  { src: img18, alt: "Photo 18", title: "Photo 18" },
+  { src: img19, alt: "Photo 19", title: "Photo 19" },
+  { src: img20, alt: "Photo 20", title: "Photo 20" },
+  { src: img21, alt: "Photo 21", title: "Photo 21" },
+  { src: img22, alt: "Photo 22", title: "Photo 22" },
+  { src: img23, alt: "Photo 23", title: "Photo 23" },
+  { src: img24, alt: "Photo 24", title: "Photo 24" },
+  { src: img25, alt: "Photo 25", title: "Photo 25" },
+  { src: img26, alt: "Photo 26", title: "Photo 26" },
+  { src: img27, alt: "Photo 27", title: "Photo 27" },
+  { src: img28, alt: "Photo 28", title: "Photo 28" },
+];
 ---
 
 <Layout title="Photography">

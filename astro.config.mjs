@@ -13,6 +13,9 @@ export default defineConfig({
   build: {
     assets: '_astro'
   },
+  assets: {
+    enabled: true
+  },
   integrations: [
     tailwind(),
     mdx(),
