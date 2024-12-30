@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from 'astro:assets';
+import projectPic from "../assets/project_pics.jpeg";
 import "../styles/projects.css";
 
 const projects = [
@@ -51,8 +53,10 @@ const projects = [
             >
               <article class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-2 hover:scale-[1.02]">
                 <div class="aspect-[2/3] w-full overflow-hidden rounded-t-2xl">
-                  <img
-                    src="https://cdn-cm.freepik.com/previews/fbbd23ae-29de-45d3-850c-5cce2df91c34.jpg?token=exp=1735558129~hmac=73dc290fd32156a5b12ffd232e16a4a28b5d09638ff3b0abdcbfadb78107292c"
+                  <Image
+                    src={projectPic}
+                    width={240}
+                    height={360}
                     alt={project.title}
                     class="w-full h-full object-cover"
                   />
