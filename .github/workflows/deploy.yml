@@ -17,13 +17,18 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.11.0'  # Use your local Node.js version here
+
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile  # Bypass the frozen lockfile error
+        run: pnpm install --no-frozen-lockfile  # Install dependencies with no frozen lockfile check
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
-          node-version: 20
+          node-version: '22.11.0'
           package-manager: pnpm@latest
 
   deploy:
