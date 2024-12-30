@@ -22,7 +22,6 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://aadityarkrishnan.github.io", // Changed to your GitHub Pages domain
-  base: "/helloaaditya", // Added base path - should match your repository name
   integrations: [tailwind(), mdx(), sitemap(), icon()],
   devToolbar: {
     enabled: false,
