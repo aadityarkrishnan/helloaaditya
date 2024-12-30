@@ -5,21 +5,20 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
-
-
 export interface Props {
   title: string;
 }
 
+const base = import.meta.env.BASE_URL;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
+// Update image URL to use base path
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  `${base}/opengraph.jpg`,
   Astro.site
 ).toString();
 
 const { title } = Astro.props;
-
 const makeTitle = "Aaditya R Krishnan"
 ---
 
@@ -28,10 +27,11 @@ const makeTitle = "Aaditya R Krishnan"
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Update favicon path -->
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
+    <base href={base} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
       description="Astroship is a starter website template for Astro built with TailwindCSS."
