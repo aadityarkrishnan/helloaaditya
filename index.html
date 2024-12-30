@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.16.18"><!-- <link rel="preload" as="image" href={src} alt="Hero" /> --><title>Aaditya R Krishnan</title><link rel="canonical" href="https://astroship.web3templates.com/"><meta name="description" content="Astroship is a starter website template for Astro built with TailwindCSS."><meta name="robots" content="index, follow"><meta property="og:title" content="Astroship - Starter Template for Astro"><meta property="og:type" content="website"><meta property="og:image" content="https://astroship.web3templates.com/opengraph.jpg"><meta property="og:url" content="https://astroship.web3templates.com/"><meta property="og:image:url" content="https://astroship.web3templates.com/opengraph.jpg"><meta property="og:image:alt" content="Astroship Homepage Screenshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@web3templates"><meta name="twitter:creator" content="@surjithctly"><link rel="stylesheet" href="/_astro/about.DOFdYVF2.css"></head> <body> <div class="max-w-screen-xl mx-auto px-5">  <header class="flex flex-col lg:flex-row justify-between items-center my-5">  <div class="flex w-full lg:w-auto items-center justify-between"> <a href="/" class="text-lg"><span class="font-bold text-slate-800">Hello</span><span class="text-slate-500">Aaditya</span> </a> <div class="block lg:hidden"> <button id="astronav-menu" aria-label="Toggle Menu">  <svg fill="currentColor" class="w-4 h-4 text-gray-800" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <title>Toggle Menu</title> <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path> <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path> </svg>  </button> </div> </div> <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">  <ul class="flex flex-col lg:flex-row lg:gap-3"> <li> <a href="/" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Home</span>  </a> </li><li> <a href="/resume" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Resume</span>  </a> </li><li> <a href="/projects" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Projects</span>  </a> </li><li> <a href="/timeline" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Timeline</span>  </a> </li><li> <a href="/todo" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Todo</span> <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+2025
+</span> </a> </li><li> <a href="/skills" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Skills</span>  </a> </li><li> <a href="/blog" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Blog</span>  </a> </li><li> <a href="/courses" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Courses</span>  </a> </li><li> <a href="/click" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Clicks</span>  </a> </li><li> <a href="/contact" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Contact</span>  </a> </li> </ul> <div class="lg:hidden flex items-center mt-3 gap-4"> <a href="#" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 w-full px-4 py-2 bg-gray-100 hover:bg-gray-200   border-2 border-transparent">Log in </a> <a href="#" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 w-full px-4 py-2 bg-black text-white hover:bg-gray-800  border-2 border-transparent">Sign up </a> </div>  </nav>  <script>(function(){const closeOnClick = false;
+
+["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+  document.addEventListener(event, addListeners);
+});
+
+// Function to clone and replace elements
+function cloneAndReplace(element) {
+  const clone = element.cloneNode(true);
+  element.parentNode.replaceChild(clone, element);
+}
+
+function addListeners() {
+  // Clean up existing listeners
+  const oldMenuButton = document.getElementById("astronav-menu");
+  if (oldMenuButton) {
+    cloneAndReplace(oldMenuButton);
+  }
+
+  const oldDropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  oldDropdownMenus.forEach((menu) => {
+    cloneAndReplace(menu);
+  });
+
+  // Mobile nav toggle
+  const menuButton = document.getElementById("astronav-menu");
+  menuButton && menuButton.addEventListener("click", toggleMobileNav);
+
+  // Dropdown menus
+  const dropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  dropdownMenus.forEach((menu) => {
+    const button = menu.querySelector("button");
+    button &&
+      button.addEventListener("click", (event) =>
+        toggleDropdownMenu(event, menu, dropdownMenus)
+      );
+
+    // Handle Submenu Dropdowns
+    const dropDownSubmenus = menu.querySelectorAll(
+      ".astronav-dropdown-submenu"
+    );
+
+    dropDownSubmenus.forEach((submenu) => {
+      const submenuButton = submenu.querySelector("button");
+      submenuButton &&
+        submenuButton.addEventListener("click", (event) => {
+          event.stopImmediatePropagation();
+          toggleSubmenuDropdown(event, submenu);
+        });
+    });
+  });
+
+  // Clicking away from dropdown will remove the dropdown class
+  document.addEventListener("click", closeAllDropdowns);
+
+  if (closeOnClick) {
+    handleCloseOnClick();
+  }
+}
+
+function toggleMobileNav() {
+  [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+function toggleDropdownMenu(event, menu, dropdownMenus) {
+  toggleMenu(menu);
+
+  // Close one dropdown when selecting another
+  Array.from(dropdownMenus)
+    .filter((el) => el !== menu && !menu.contains(el))
+    .forEach(closeMenu);
+
+  event.stopPropagation();
+}
+
+function toggleSubmenuDropdown(event, submenu) {
+  event.stopPropagation();
+  toggleMenu(submenu);
+
+  // Close sibling submenus at the same nesting level
+  const siblingSubmenus = submenu
+    .closest(".astronav-dropdown")
+    .querySelectorAll(".astronav-dropdown-submenu");
+  Array.from(siblingSubmenus)
+    .filter((el) => el !== submenu && !submenu.contains(el))
+    .forEach(closeMenu);
+}
+
+function closeAllDropdowns(event) {
+  const dropdownMenus = document.querySelectorAll(".dropdown-toggle");
+  const dropdownParent = document.querySelectorAll(
+    ".astronav-dropdown, .astronav-dropdown-submenu"
+  );
+  const isButtonInsideDropdown = [
+    ...document.querySelectorAll(
+      `.astronav-dropdown button, .astronav-dropdown label, .astronav-dropdown input,
+	  .astronav-dropdown-submenu button, .astronav-dropdown-submenu label, .astronav-dropdown-submenu input,
+	  #astronav-menu`
+    ),
+  ].some((button) => button.contains(event.target));
+  if (!isButtonInsideDropdown) {
+    dropdownMenus.forEach((d) => {
+      // console.log("I ran", d);
+      // if (!d.contains(event.target)) {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.classList.add("hidden");
+      // }
+    });
+    dropdownParent.forEach((d) => {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.setAttribute("aria-expanded", "false");
+    });
+  }
+}
+
+function toggleMenu(menu) {
+  menu.classList.toggle("open");
+  const expanded = menu.getAttribute("aria-expanded") === "true";
+  menu.setAttribute("aria-expanded", expanded ? "false" : "true");
+  menu.hasAttribute("open")
+    ? menu.removeAttribute("open")
+    : menu.setAttribute("open", "");
+
+  const dropdownToggle = menu.querySelector(".dropdown-toggle");
+  const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+  dropdownToggle.classList.toggle("hidden");
+  dropdownToggle.setAttribute(
+    "aria-expanded",
+    dropdownExpanded === "true" ? "false" : "true"
+  );
+}
+
+function closeMenu(menu) {
+  // console.log("closing", menu);
+  menu.classList.remove("open");
+  menu.removeAttribute("open");
+  menu.setAttribute("aria-expanded", "false");
+  const dropdownToggles = menu.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    toggle.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function handleCloseOnClick() {
+  const navMenuItems = document.querySelector(".astronav-items");
+  const navToggle = document.getElementById("astronav-menu");
+  const navLink = navMenuItems && navMenuItems.querySelectorAll("a");
+
+  const MenuIcons = navToggle.querySelectorAll(".astronav-toggle");
+
+  navLink &&
+    navLink.forEach((item) => {
+      item.addEventListener("click", () => {
+        navMenuItems?.classList.add("hidden");
+        MenuIcons.forEach((el) => {
+          el.classList.toggle("hidden");
+        });
+      });
+    });
+}
+})();</script> </header>  </div>  <div class="max-w-screen-xl mx-auto px-5">  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24"> <div class="py-6 md:order-1 hidden md:block"> <picture> <source srcset="/_astro/software_hero.CqKXKusM_2c5CJn.webp 200w, /_astro/software_hero.CqKXKusM_ZLTqMd.webp 400w, /_astro/software_hero.CqKXKusM_1jhCu8.webp 600w" type="image/webp" sizes="(max-width: 800px) 100vw, 620px"> <img src="/_astro/software_hero.CqKXKusM_Z1YeVm4.png" srcset="/_astro/software_hero.CqKXKusM_ZuRPrf.png 200w, /_astro/software_hero.CqKXKusM_1AjdP6.png 400w, /_astro/software_hero.CqKXKusM_Z1nFPGu.png 600w" alt="Software Developer Illustration" sizes="(max-width: 800px) 100vw, 620px" loading="eager" width="858" height="539" decoding="async"> </picture> </div> <div> <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+Full Stack Python Engineer
+</h1> <p class="text-lg mt-4 text-slate-600 max-w-xl text-justify">
+Results-driven Senior Engineer with 7+ years of experience specializing in enterprise software and data analytics solutions. Demonstrated expertise in building secure applications reducing manual operations by 60%. Proficient in developing data visualization dashboards and implementing business intelligence solutions
+</p> <div class="mt-6 flex flex-col sm:flex-row gap-3"> <a href="/_astro/AadityaRKrishnan2025.DZvzeal9.pdf" download="AadityaRKrishnan_Resume.pdf" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent flex gap-1 items-center justify-center"> <svg width="1em" height="1em" class="text-white w-5 h-5" data-icon="bx:bxs-download">   <symbol id="ai:bx:bxs-download" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 8zM4 19h16v2H4z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-download"></use>  </svg>
+Resume
+ </a> <a href="https://github.com/aadityarkrishnan" rel="noopener" target="_blank" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white border-2 border-black hover:bg-gray-100 text-black  flex gap-1 items-center justify-center"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-black w-4 h-4" data-icon="bx:bxl-github">   <use href="#ai:bx:bxl-github"></use>  </svg>
+GitHub Profile
+ </a> </div> </div> </main> <div class="mt-16 md:mt-0"> <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+Professional Achievements
+</h2> <p class="text-lg mt-4 text-slate-600">
+Recognition received for contributions to technology and innovation throughout my career.
+</p> </div> <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16"> <div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-trophy">   <symbol id="ai:bx:bxs-trophy" viewBox="0 0 24 24"><path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.8 6.91 4.82 7A6 6 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09A6 6 0 0 0 17.18 15c3-.1 4.82-2.7 4.82-7V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.22 12.08 4 9.3 4 8zm14 4.83V6h2v2c0 1.3-.22 4.08-2 4.83z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-trophy"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Star of the Quarter (Q4 2023)</h3>  <p class="text-slate-500 mt-2 leading-relaxed">Recognized for exceptional contributions to cloud security, process automation, and innovation in system development at Envestnet.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-star">   <symbol id="ai:bx:bxs-star" viewBox="0 0 24 24"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453l-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107l-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4l4.536-4.082c.297-.268.406-.686.278-1.065z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-star"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">WoW Award (Q3 2023)</h3>  <p class="text-slate-500 mt-2 leading-relaxed">Awarded for implementing innovative solutions in cloud security and process automation, significantly improving system efficiency.</p> </div> </div><div class="flex gap-4 items-start"> <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0"> <svg width="1em" height="1em" class="text-white" data-icon="bx:bxs-medal">   <symbol id="ai:bx:bxs-medal" viewBox="0 0 24 24"><path d="M17 2h-4v4.059a8.946 8.946 0 0 1 4 1.459V2zm-6 0H7v5.518a8.946 8.946 0 0 1 4-1.459V2zm1 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14zm-1.225-8.519L12 11l1.225 2.481l2.738.397l-1.981 1.932l.468 2.727L12 17.25l-2.449 1.287l.468-2.727l-1.981-1.932l2.737-.397z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-medal"></use>  </svg> </div> <div> <h3 class="font-semibold text-lg">Best Rookie Award (2021)</h3>  <p class="text-slate-500 mt-2 leading-relaxed">Received from Trinfy AFE for introducing new features, deferring backlogged tasks, and streamlining processes during my time at Infosys.</p> </div> </div> </div>  </div>  <footer class="my-20"> <div class="text-center"> <div class="flex items-center justify-center gap-4 mb-4"> <a href="mailto:aadityarkrishnan@gmail.com" class="text-gray-600 hover:text-black transition-colors duration-200" aria-label="Email"> <svg width="1em" height="1em" class="w-6 h-6" data-icon="bx:bxs-envelope">   <symbol id="ai:bx:bxs-envelope" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7l-8 5.334L4 8.7V6.297l8 5.333l8-5.333V8.7z" fill="currentColor"/></symbol><use href="#ai:bx:bxs-envelope"></use>  </svg> </a> <a href="https://www.linkedin.com/in/aaditya-r-krishnan-3200a92aa/" target="_blank" rel="noopener" class="text-gray-600 hover:text-blue-500 transition-colors duration-200" aria-label="LinkedIn"> <svg width="1em" height="1em" class="w-6 h-6" data-icon="bx:bxl-linkedin">   <symbol id="ai:bx:bxl-linkedin" viewBox="0 0 24 24"><circle cx="4.983" cy="5.009" r="2.188" fill="currentColor"/><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118c1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783c-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z" fill="currentColor"/></symbol><use href="#ai:bx:bxl-linkedin"></use>  </svg> </a> <a href="https://github.com/aadityarkrishnan" target="_blank" rel="noopener" class="text-gray-600 hover:text-black transition-colors duration-200" aria-label="GitHub"> <svg width="1em" height="1em" class="w-6 h-6" data-icon="bx:bxl-github">   <symbol id="ai:bx:bxl-github" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974c0 4.406 2.857 8.145 6.821 9.465c.499.09.679-.217.679-.481c0-.237-.008-.865-.011-1.696c-2.775.602-3.361-1.338-3.361-1.338c-.452-1.152-1.107-1.459-1.107-1.459c-.905-.619.069-.605.069-.605c1.002.07 1.527 1.028 1.527 1.028c.89 1.524 2.336 1.084 2.902.829c.091-.645.351-1.085.635-1.334c-2.214-.251-4.542-1.107-4.542-4.93c0-1.087.389-1.979 1.024-2.675c-.101-.253-.446-1.268.099-2.64c0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336a9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021c.545 1.372.203 2.387.099 2.64c.64.696 1.024 1.587 1.024 2.675c0 3.833-2.33 4.675-4.552 4.922c.355.308.675.916.675 1.846c0 1.334-.012 2.41-.012 2.737c0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974C22 6.465 17.535 2 12.026 2z" fill="currentColor"/></symbol><use href="#ai:bx:bxl-github"></use>  </svg> </a> </div> <p class="text-sm text-slate-600 font-medium">
+Made with <span class="text-red-500">❤</span> by Aaditya R Krishnan
+</p> <p class="text-xs text-slate-500 mt-2">
+© 2024 | Full Stack Python Engineer
+</p> </div> </footer>  </body> </html>
