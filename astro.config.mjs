@@ -5,16 +5,13 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: 'https://aadityarkrishnan.github.io',
+  site: 'https://aadityarkrishnan.github.io/helloaaditya',
   base: '/helloaaditya',
   devToolbar: {
     enabled: false
   },
   build: {
     assets: '_astro'
-  },
-  assets: {
-    enabled: true
   },
   integrations: [
     tailwind(),
